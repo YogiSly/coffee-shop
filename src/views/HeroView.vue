@@ -59,9 +59,9 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
-              <cart-component />
-              <cart-component />
-              <cart-component />
+              <product-cart />
+              <product-cart />
+              <product-cart />
             </div>
           </div>
         </div>
@@ -71,11 +71,11 @@
 </template>
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
-import CartComponent from "@/components/CartComponent.vue";
+import ProductCart from "@/components/ProductCart.vue";
 export default {
   components: {
     NavBarComponent,
-    CartComponent,
+    ProductCart,
   },
 };
 </script>
