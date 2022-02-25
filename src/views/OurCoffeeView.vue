@@ -69,12 +69,42 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <product-cart />
-              <product-cart />
-              <product-cart />
-              <product-cart />
-              <product-cart />
-              <product-cart />
+              <product-cart
+                classItem="shop__item"
+                :name="coffee[0].name"
+                :price="coffee[0].price"
+                :image="coffee[0].image"
+              />
+              <product-cart
+                classItem="shop__item"
+                :name="coffee[1].name"
+                :price="coffee[1].price"
+                :image="coffee[1].image"
+              />
+              <product-cart
+                classItem="shop__item"
+                :name="coffee[2].name"
+                :price="coffee[2].price"
+                :image="coffee[2].image"
+              />
+              <product-cart
+                classItem="shop__item"
+                :name="coffee[3].name"
+                :price="coffee[3].price"
+                :image="coffee[3].image"
+              />
+              <product-cart
+                classItem="shop__item"
+                :name="coffee[4].name"
+                :price="coffee[4].price"
+                :image="coffee[4].image"
+              />
+              <product-cart
+                classItem="shop__item"
+                :name="coffee[5].name"
+                :price="coffee[5].price"
+                :image="coffee[5].image"
+              />
             </div>
           </div>
         </div>
@@ -92,42 +122,42 @@ export default {
   },
   data() {
     return {
-      cards: [
+      coffee: [
         {
           id: 0,
-          img: "coffee-1.jpg",
-          text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          image: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: "10.73",
         },
         {
           id: 1,
-          img: "coffee-2.jpg",
-          text: "Presto Coffee Beans 1kg",
-          price: "15.99$",
+          image: "coffee-2.jpg",
+          name: "Presto Coffee Beans 1kg",
+          price: "15.99",
         },
         {
           id: 2,
-          img: "coffee-3.jpg",
-          text: "AROMISTICO Coffee 1kg",
-          price: "6.99$",
+          image: "coffee-3.jpg",
+          name: "AROMISTICO Coffee 1kg",
+          price: "6.99",
         },
         {
           id: 3,
-          img: "coffee-1.jpg",
-          text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          image: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: "10.73",
         },
         {
           id: 4,
-          img: "coffee-1.jpg",
-          text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          image: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: "10.73",
         },
         {
           id: 5,
-          img: "coffee-1.jpg",
-          text: "Solimo Coffee Beans 2kg",
-          price: "10.73$",
+          image: "coffee-1.jpg",
+          name: "Solimo Coffee Beans 2kg",
+          price: "10.73",
         },
       ],
     };
