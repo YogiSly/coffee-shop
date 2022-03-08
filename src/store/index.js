@@ -2,14 +2,21 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import links from './links'
-import cards from './cards'
-
+import goods from './goods'
+import coffee from './coffee'
+import bestsellers from './bestsellers'
+import product from './product'
+import common from './common'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
     links,
-    cards
+    goods,
+    coffee,
+    bestsellers,
+    product,
+    common
   },
 
 })

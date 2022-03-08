@@ -86,6 +86,7 @@ export default {
     NavBarComponent,
     ProductCart,
   },
+
   computed: {
     cards() {
       return this.$store.getters["getBestCard"];
@@ -99,6 +100,13 @@ export default {
         inline: "center",
       });
     },
+  },
+  mounted() {
+    fetch("http://localhost:3000/bestsellers").then((res) =>
+      res.json().then((data) => {
+        this.$store.dispatch("setBestData", data);
+      })
+    );
   },
 };
 </script>
