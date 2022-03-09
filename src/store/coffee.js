@@ -1,44 +1,9 @@
 const coffee = {
   state: {
 
-    coffee: [
-      {
-        id: 0,
-        image: "coffee-1.jpg",
-        name: "1Solimo Coffee Beans 2kg",
-        price: "10.73",
-      },
-      {
-        id: 1,
-        image: "coffee-2.jpg",
-        name: "1Presto Coffee Beans 1kg",
-        price: "15.99",
-      },
-      {
-        id: 2,
-        image: "coffee-3.jpg",
-        name: "1AROMISTICO Coffee 1kg",
-        price: "6.99",
-      },
-      {
-        id: 3,
-        image: "coffee-1.jpg",
-        name: "1Solimo Coffee Beans 2kg",
-        price: "10.73",
-      },
-      {
-        id: 4,
-        image: "coffee-1.jpg",
-        name: "1Solimo Coffee Beans 2kg",
-        price: "10.73",
-      },
-      {
-        id: 5,
-        image: "coffee-1.jpg",
-        name: "1Solimo Coffee Beans 2kg",
-        price: "10.73",
-      },
-    ],
+    coffee: [],
+    searchValue: '',
+    sortValue: ''
   },
   mutations: {
     setCoffeeData(state, data) {
@@ -47,6 +12,13 @@ const coffee = {
     setItemData(state, data) {
       state.coffee.id = data
     },
+    setSearchValue(state, value) {
+      state.searchValue = value
+    },
+    setSortValue(state, value) {
+      console.log(value);
+      state.sortValue = value
+    }
   },
   actions: {
     setCoffeeData({ commit }, data) {
@@ -55,16 +27,25 @@ const coffee = {
     setItemData({ commit }, data) {
       commit("setItemData", data)
     },
+    setSearchValue({ commit }, data) {
+      commit("setSearchValue", data)
+    },
+    setSortValue({ commit }, value) {
+      commit("setSortValue", value)
+    }
   },
   getters: {
     getCoffeeCard(state) {
-      return { coffee: state.coffee };
+      return state.coffee.filter(item => item.name.toLowerCase().includes(state.searchValue.toLowerCase())).filter(item => item.country.toLowerCase().includes(state.sortValue.toLowerCase()))
     },
     getProductById(state) {
       return (id) => {
         return state.coffee.find((card) => card.id === +id)
       }
     },
+    getSearchValue(state) {
+      return state.searchValue;
+    }
   }
 }
 

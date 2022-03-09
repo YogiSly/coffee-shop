@@ -31,11 +31,11 @@
               src="@/assets/logo/Beans_logo_dark.svg"
               alt="Beans logo"
             />
-            <div class="shop__point">
+            <div class="shop__point" v-if="product.product.country">
               <span>Country:</span>
               {{ product.product.country }}
             </div>
-            <div class="shop__point">
+            <div class="shop__point" v-if="product.product.description">
               <span>Description:</span>
               {{ product.product.description }}
             </div>
